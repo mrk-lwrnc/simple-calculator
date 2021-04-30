@@ -60,6 +60,16 @@ class CalculatorBuffer {
         const input = selectors['display input'].textContent;
         const decimal_point = '.';
         if (input.includes(decimal_point)) { return; }
+        if (this._has_recently_appended_operator) {
+            selectors['display input'].textContent = '0'.concat(decimal_point);
+            this._has_recently_appended_operator = false;
+            return;
+        }
+
+        if (this._has_recently_appended_equals) {
+            this.clearDisplay();
+            this._has_recently_appended_equals = false;
+        }
         selectors['display input'].textContent += decimal_point;
     }
 
