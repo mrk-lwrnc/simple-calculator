@@ -24,12 +24,23 @@ body {
 }
 
 .display-container {
-    width: calc(100% - 0.5em);
-    padding: 0.25em;
+    width: calc(100% - 1em);
+    padding: 0.25em 0.5em 0;
     background-color: #63a07e;
-    color: #3c5e4b;
-    font-size: 4em;
     text-align: end;
+    vertical-align: bottom;
+    word-wrap: break-word;
+}
+
+.display-input-container {
+    font-size: 3.5em;
+    color: #3c5e4b;
+}
+
+.display-equation-container {
+    font-size: 1.8em;
+    color: #537763;
+    padding-right: 0.25em;
 }
 
 .buttons-container {
